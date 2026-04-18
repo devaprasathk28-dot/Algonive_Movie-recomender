@@ -1,0 +1,366 @@
+/* 🌙 GLOBAL */
+body {
+  margin: 0;
+  background-color: #0f0f0f;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.app {
+  padding: 20px;
+}
+
+/* 🎬 HEADER */
+.title {
+  text-align: center;
+  color: #e50914;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* 🔥 TRENDING WRAPPER */
+.row-wrapper {
+  padding: 0 20px;
+}
+
+/* 🎬 NETFLIX SCROLL ROW */
+.row-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 14px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.row-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.row-scroll::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+/* 🎬 TRENDING CARD */
+.trending-card {
+  position: relative;
+  min-width: 170px;
+  cursor: pointer;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.trending-card img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* 🔥 HOVER EFFECT */
+.trending-card:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+/* 🔥 OVERLAY */
+.trending-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  opacity: 0;
+  transition: 0.3s ease;
+  border-radius: 0 0 10px 10px;
+}
+
+.trending-card:hover .trending-overlay {
+  opacity: 1;
+}
+
+.trending-overlay p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.trending-overlay span {
+  font-size: 12px;
+  color: #ffd700;
+}
+
+/* 🔍 SEARCH */
+.search-box {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.search-box input {
+  padding: 12px;
+  width: 300px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  margin-left: 10px;
+  background: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.search-box button:hover {
+  background: #ff1f1f;
+}
+
+/* ⚙️ CONTROLS */
+.controls {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.controls select,
+.controls input {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* 🔥 SUGGESTIONS */
+.suggestions {
+  background: #1f1f1f;
+  width: 300px;
+  margin: auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background: #333;
+}
+
+/* 🎬 GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 🎬 CARD */
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 🔥 HOVER OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* TEXT */
+.overlay h3 {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.overlay p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+/* BUTTON */
+.overlay button {
+  background: #e50914;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.overlay button:hover {
+  background: #ff1f1f;
+}
+
+/* ⏳ LOADING */
+.loading {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 🎥 TRAILER MODAL */
+.trailer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.trailer-content {
+  width: 70%;
+  background: #111;
+  padding: 10px;
+  border-radius: 10px;
+}
+/* 🎬 MOVIE MODAL */
+.movie-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.movie-modal-content {
+  background: #111;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 900px;
+}
+
+.movie-modal-content img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.movie-details {
+  flex: 1;
+}
+
+.movie-details h2 {
+  margin-top: 0;
+}
+
+.movie-details button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  background: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-btn {
+  background: #444;
+}
+
+.movie-details p {
+  margin-top: 10px;
+}
+.movie-modal-content {
+  background: #111;
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  border-radius: 12px;
+  width: 70%;
+  max-width: 900px;
+}
+
+.movie-modal-content img {
+  width: 280px;
+  border-radius: 10px;
+}
+
+.movie-details {
+  flex: 1;
+}
+
+.description {
+  margin-top: 10px;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.rating {
+  color: #ffd700;
+  margin-top: 5px;
+}
+/* 🎥 Trailer Preview */
+.trailer-preview {
+  width: 100%;
+  height: 260px;
+  border: none;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Smooth transition */
+.card img {
+  transition: opacity 0.3s ease;
+}
+
+/* Optional zoom effect */
+.card:hover {
+  transform: scale(1.05);
+}
+.card::after {
+  content: "▶";
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: 30px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
