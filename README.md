@@ -180,7 +180,7 @@ Adapt similar build/start cmds.
 
 ## 👨‍💻 Author
 
-**Devaprasath** - AI/ML Engineer
+**DEVAPRASATH K** - AI/ML Engineer
 
 Built with ❤️ using FastAPI + React + Scikit-learn
 
