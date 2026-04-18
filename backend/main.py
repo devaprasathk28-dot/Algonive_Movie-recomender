@@ -47,8 +47,8 @@ app.add_middleware(
 # =========================
 # 📂 LOAD DATA
 # =========================
-movies = pd.read_csv("../data/movie.csv")
-links = pd.read_csv("../data/link.csv")  # ✅ FIXED NAME
+movies = pd.read_csv("../data/movies.csv")
+links = pd.read_csv("../data/links.csv")  # ✅ FIXED NAME
 
 movies = movies.merge(links, on="movieId")
 movies = movies[movies['imdbId'].notna()].head(1000).reset_index(drop=True)

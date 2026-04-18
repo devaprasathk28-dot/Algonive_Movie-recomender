@@ -6,9 +6,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load datasets
-movies = pd.read_csv("../data/movie.csv")
-ratings = pd.read_csv("../data/rating.csv")
-links = pd.read_csv("../data/link.csv")
+movies = pd.read_csv("../data/movies.csv")
+ratings = pd.read_csv("../data/ratings.csv")
+links = pd.read_csv("../data/links.csv")
 
 # 🔥 MERGE DATA (IMPORTANT)
 movies = movies.merge(links, on="movieId")
