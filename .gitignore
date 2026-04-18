@@ -1,0 +1,15 @@
+# Ignore dataset files
+data/*.csv
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore node modules
+node_modules/
+
+# Ignore frontend build
+dist/
+
+# Ignore env files
+.env
